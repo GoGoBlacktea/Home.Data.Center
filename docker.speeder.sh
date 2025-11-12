@@ -27,7 +27,7 @@ ${RED}| | | | | |__| | | |  | |__)  ) ( ( | ( (___| |< (| |_( (/ ( ( | |
 ${WHITE} \____|_|\___)_| |_|  |______/|_|\_||_|\____)_| \_)\___)____)_||_|                          
                                                                                             
 ${GREEN}================================================================${RESET}
-     一键更新 本地Docker镜像加速地址（原地备份版） v1.2 
+     一键更新 本地Docker镜像加速地址（原地备份版） v1.3 
 ${GREEN}================================================================${RESET}
 ${RED}[注意：本脚本只针对Linux环境]${RESET}
 
@@ -99,6 +99,7 @@ if [ -n "$local_mirror" ]; then
 {
   "registry-mirrors": [
     "$local_mirror",
+    "https://docker.1ms.run",
     "https://docker.nju.edu.cn",
     "https://ghcr.nju.edu.cn",
     "https://xget.xi-xu.me"
@@ -112,6 +113,7 @@ else
   cat <<JSON | sudo tee /etc/docker/daemon.json
 {
   "registry-mirrors": [
+    "https://docker.1ms.run",
     "https://docker.nju.edu.cn",
     "https://ghcr.nju.edu.cn",
     "https://xget.xi-xu.me"
